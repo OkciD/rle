@@ -8,7 +8,14 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+	char string[256];
+	
+	printf("Insert string:\n");
+	if (!fgets(string, sizeof(string), stdin)) {
+		return 1;
+	}
+	
+	printf("%s\n", string);
+	
     return 0;
 }
