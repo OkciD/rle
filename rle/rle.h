@@ -8,6 +8,6 @@
 #ifndef rle_h
 #define rle_h
 
-char *rle(char *string);
+void rle(const char * const string, char *result);
 
 #endif /* rle_h */

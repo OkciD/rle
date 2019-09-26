@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "rle.h"
 
 char *trimNewLine(char *string) {
@@ -27,9 +28,18 @@ int main(int argc, const char * argv[]) {
 		return 1;
 	}
 	
-	rle(trimNewLine(string));
+	unsigned long length = strlen(string);
+	char *result = (char *)malloc((length + 1) * sizeof(char));
 	
-	printf("%s\n", string);
+	if (result == NULL) {
+		return 1;
+	}
+	
+	rle(trimNewLine(string), result);
+	
+	printf("%s\n", result);
+	
+	free(result);
 	
     return 0;
 }
