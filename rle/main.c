@@ -37,7 +37,7 @@ int main(int argc, const char * argv[]) {
 	
 	rle(trimNewLine(string), result);
 	
-	printf("%s\n", result);
+	printf("Result:\n%s\n", result);
 	
 	free(result);
 	
